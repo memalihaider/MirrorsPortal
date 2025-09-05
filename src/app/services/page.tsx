@@ -1,3 +1,5 @@
+
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -13,6 +15,7 @@ import {
   Category,
   subscribeToCategoriesChanges
 } from '@/lib/firebaseServicesNoStorage';
+import AccessWrapper from '@/components/AccessWrapper';
 
 export default function ServicesPage() {
   const [services, setServices] = useState<Service[]>([]);
@@ -200,6 +203,7 @@ export default function ServicesPage() {
 
   if (loading) {
     return (
+    
       <div className="p-3">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-center py-12">
@@ -208,10 +212,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+      
     );
   }
 
   return (
+    <AccessWrapper>
     <div className="p-2 sm:p-3">
       <div className="max-w-5xl mx-auto">
         {/* Compact Header */}
@@ -495,6 +501,7 @@ export default function ServicesPage() {
         )}
       </div>
     </div>
+     </AccessWrapper>
   );
 }
 
@@ -624,5 +631,8 @@ function ServiceCard({ service, onEdit, onDelete, onToggleStatus, getCategoryCol
         </div>
       </div>
     </div>
+   
   );
 }
+
+

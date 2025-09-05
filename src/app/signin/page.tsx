@@ -56,7 +56,7 @@ export default function SignIn() {
     setLoading(true);
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth,email, password);
       router.push('/');
     } catch (error: unknown) {
       console.error('Sign in error:', error);
@@ -212,23 +212,11 @@ export default function SignIn() {
             </button>
           </form>
 
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-sm text-blue-800 font-medium mb-1">Demo Credentials:</p>
-            <p className="text-sm text-blue-600">admin@mirrorbeauty.com / admin123</p>
-          </div>
+        
 
           {/* Sign Up Link */}
           <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              Don&apos;t have an account?{' '}
-              <Link
-                href="/signup"
-                className="text-pink-600 hover:text-pink-700 font-medium transition-colors"
-              >
-                Create one here
-              </Link>
-            </p>
+            
           </div>
         </div>
 
@@ -242,3 +230,11 @@ export default function SignIn() {
     </div>
   );
 }
+
+
+
+
+
+
+
+

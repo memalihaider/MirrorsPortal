@@ -1,9 +1,7 @@
-# Next.js build output
-.next
-
-# dependencies
-node_modules
-
-# environment variables
+node_modules/
+.next/
+out/
+dist/
 .env
-
+.vscode/
+*.log

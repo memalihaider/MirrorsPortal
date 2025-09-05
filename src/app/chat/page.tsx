@@ -6,6 +6,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage, isFirebaseConfigured } from '../../lib/firebase';
 import { useAuth } from '../../contexts/AuthContext';
 import Image from 'next/image';
+import AccessWrapper from '@/components/AccessWrapper';
 
 interface ChatMessage {
   id: string;
@@ -372,6 +373,7 @@ function ChatComponent() {
   }
 
   return (
+    <AccessWrapper>
     <div className="h-screen flex flex-col md:flex-row bg-gradient-to-br from-pink-50 via-pink-50 to-pink-100">
       {/* Chat Rooms Sidebar */}
       <div className="w-full md:w-80 lg:w-96 bg-pink-50/90 backdrop-blur-sm border-r border-pink-200/30 flex flex-col shadow-[0_8px_30px_rgb(233,30,99,0.15)]">
@@ -585,6 +587,7 @@ function ChatComponent() {
         )}
       </div>
     </div>
+    </AccessWrapper>
   );
 }
 
@@ -604,6 +607,7 @@ export default function ChatPage() {
           </p>
         </div>
       </div>
+       
     );
   }
 
@@ -618,6 +622,7 @@ export default function ChatPage() {
           </p>
         </div>
       </div>
+     
     );
   }
 

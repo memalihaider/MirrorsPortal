@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import AccessWrapper from '@/components/AccessWrapper';
 import {
   collection,
   query,
@@ -523,6 +524,7 @@ export default function BookingsPage() {
   }
 
   return (
+      <AccessWrapper>
     <div>
       <div className="max-w-6xl mx-auto dark:text-white">
         {/* Header */}
@@ -1252,11 +1254,8 @@ export default function BookingsPage() {
         {/* =================== END CREATE / EDIT MODAL =================== */}
       </div>
     </div>
+    </AccessWrapper>
   );
 }
-
-
-
-
 
 

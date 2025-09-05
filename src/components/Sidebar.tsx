@@ -605,7 +605,7 @@ const navItems: {
   { icon: Users, label: "Staff", href: "/staff", roles: ["admin", "user"], subItems: [] },
 
   // 👇 ⭐ Customers
-  { icon: UserCircle, label: "Customers", href: "/customer", roles: ["admin", "user"], subItems: [] },
+  { icon: UserCircle, label: "Customers", href: "/customers", roles: ["admin", "user"], subItems: [] },
 
   { icon: Users, label: "Users", href: "/users", roles: ["admin"], subItems: [] },
   { icon: User, label: "Profile", href: "/profile", roles: ["admin", "user"], subItems: [] },
@@ -675,10 +675,8 @@ export default function Sidebar({ collapsed }: SidebarProps) {
               : "bg-gradient-to-br from-pink-100/50 to-pink-200/30 border border-pink-200/50 shadow-pink-500/20"
           )}
           layout
-          transition={{ duration: 0.15 }}
-        ><span
-            className={cn(
-              collapsed ? 'text-base' : 'text-lg',
+          transition={{ duration: 0.15 }}>
+            <span className={cn(collapsed ? 'text-base' : 'text-lg',
               pacifico.className,
               darkMode
                 ? "text-white"

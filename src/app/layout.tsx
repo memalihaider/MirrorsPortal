@@ -3,8 +3,10 @@
 import './globals.css';
 import { ReactNode, useEffect, useState } from 'react';
 import SidebarWrapper from '@/components/SidebarWrapper';
+
 // import Header from '@/components/Header';
 import Header from '../components/Navbar';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -33,9 +35,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
+      
       <body className="min-h-screen bg-gradient-to-br from-green-50/50 via-white to-emerald-50/50 dark:from-gray-900 dark:via-black dark:to-gray-900"
       suppressHydrationWarning={true}
       >
+          <AuthProvider>
         <div className="flex min-h-screen">
           {/* Sidebar */}
           <SidebarWrapper collapsed={collapsed} setCollapsed={setCollapsed} />
@@ -55,7 +59,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </main>
           </div>
         </div>
+        </AuthProvider>
       </body>
     </html>
   );
 }
+
+
